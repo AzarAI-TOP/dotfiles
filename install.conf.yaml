@@ -7,5 +7,6 @@
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.config/kitty/kitty.conf: kitty.conf
 
 

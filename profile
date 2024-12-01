@@ -30,3 +30,6 @@ fi
 # Added by Toolbox App
 export PATH="$PATH:/home/azarai/.local/share/JetBrains/Toolbox/scripts"
 
+# Added by Cargo
+. "$HOME/.cargo/env"
+

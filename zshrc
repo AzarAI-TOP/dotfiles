@@ -75,6 +75,7 @@ plugins=(
 		extract
 		jump
 		sudo
+		eza
 		zsh-syntax-highlighting
 		zsh-autosuggestions
 	)
@@ -101,11 +102,19 @@ fi
 # Custom aliases
 alias zshconfig="vim ~/.zshrc"
 alias zshreload=". ~/.zshrc"
+
 alias vimconfig="vim ~/.vimrc"
 alias bashconfig="vim ~/.bashrc"
+alias srcconfig="sudo vim /etc/apt/sources.list"
+alias kittyconfig="vim ~/.config/kitty/kitty.conf"
 
+# Abbreviations
 alias apt="sudo apt"
 alias bat="batcat"
+
+# Kitty aliases
+alias kitty-icat="kitty +kitten icat"
+alias kitty-themes="kitty +kitten themes"
 
 # Custom environmental variables
 export XMODIFIERS=@im=fcitx
@@ -113,8 +122,10 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 
 export PATH=$PATH:~/.local/bin
+
 # Custom functions
 function newApps (){
+    apt clean
 	apt update
 	apt full-upgrade
 }
@@ -133,6 +144,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Vivado setup shell scripts
+. "/opt/xilinx/Vivado/2024.2/settings64.sh"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
