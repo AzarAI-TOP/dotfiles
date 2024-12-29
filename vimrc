@@ -1,6 +1,7 @@
  " Basic Configurations --------------------------------------------------------
 
 set autoread		" autoread file's external change
+set autochdir       " auto switch the working directory
 set nocompatible    " won't be compatible with vi
 filetype plugin indent on
 set syntax=on		" language highlight
@@ -71,12 +72,12 @@ map <C-A> ggVG
 map <C-S> :w<CR>
 
 "" copy line
-nnoremap ck yykp
-nnoremap cj yyp
+nnoremap <C-Up> yykp
+nnoremap <C-Down> yyp
 
 "" move line
-nnoremap mk ddkkp
-nnoremap mj ddp
+nnoremap <M-Up> ddkkp
+nnoremap <M-Down> ddp
 
 "" tab management
 map <leader>to :tabo<CR>
@@ -91,11 +92,24 @@ map <leader>bc :bdelete<CR>
 map <leader>bp :bprevious<CR>
 map <leader>bn :bnext<CR>
 
+map <M-Left>  :bprevious<CR>
+map <M-Right> :bnext<CR>
+
+map <leader>1 :b 1<CR>
+map <leader>2 :b 2<CR>
+map <leader>3 :b 3<CR>
+map <leader>4 :b 4<CR>
+map <leader>5 :b 5<CR>
+map <leader>6 :b 6<CR>
+map <leader>7 :b 7<CR>
+map <leader>8 :b 8<CR>
+map <leader>9 :b 9<CR>
+
 "" wrap
-nnoremap <F3> :set wrap!<CR>
+nnoremap <F11> :set wrap!<CR>
 
 "" syntax highlight
-nnoremap <F3> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+nnoremap <F4> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " Plugin Configurations --------------------------------------------------------
 
@@ -199,10 +213,20 @@ nnoremap <leader>ntt :NERDTree<CR>
 nnoremap <leader>ntg :NERDTreeToggle<CR>
 nnoremap <leader>ntf :NERDTreeFind<CR>
 
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <F2> :NERDTreeToggle<CR>
 
 "" Plugin [Vim-DevIcons]
 " Plug 'ryanoasis/vim-devicons'
+
+"" Plugin [Fzf]
+Plug 'junegunn/fzf.vim'
+
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+
+"" Plugin [Vim-Multiple-Cursors]
+Plug 'terryma/vim-multiple-cursors'
+
 
 "" stop vim-plug
 call plug#end()

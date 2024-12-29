@@ -1,5 +1,7 @@
 [user]
-	name = AzarAI
 	email = azarai@mail.ustc.edu.cn
+	name = AzarAI
 [init]
 	defaultBranch = main
+[core]
+	quotepath = false
